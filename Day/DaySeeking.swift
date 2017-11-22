@@ -15,8 +15,7 @@ extension Day {
     ///Search starts from the NEXT day from today or NEXT day from the 'fromDay'.
     ///Example: input 'xx000xxx' with predicate == x will return 6th position day
     public static func nextDay(fromDay: Day? = nil, matchingPredicate predicate: (Day) -> Bool) -> Day? {
-        let today = Day()
-        var dayIterrator = fromDay ?? today
+        var dayIterrator = fromDay ?? Day()
         
         //Calculate number of days matching current search predicate from the start point
         let itemsToSkip: Int = {
