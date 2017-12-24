@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "Alexander Kirsch" => "spam-reporter-3000@alexander-kirsch.com" }
   s.social_media_url   = "http://twitter.com/numen31337"
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/numen31337/Day.git", :tag => "#{s.version}" }
   s.source_files  = "Day/**/*.{h,m,swift}"
 end
