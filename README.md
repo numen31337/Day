@@ -8,7 +8,7 @@ Day is the mini library to represent a Day value with serialization functionalit
 ## Features
 
 - Can be created from the Date with resetting of its time components
-- Serialization to the String and back
+- Serialization to the human-readable and sortable String and back
 - Caching (for internal usage)
 - Day seeking algorithms (primarily for my personal need)
 - Convenient property for accessing next and previous day
@@ -19,9 +19,14 @@ Initialising:<br />
 ```swift
 let day = Day() //Day value for the current day
 let day = Day(date) //Day value from the date by dropping time components
-let day = Day("2017.11.22") //Day value from the serialized string
 ```
-    
+
+Serialization:<br />
+```swift
+let serializedString = day.stringValue //A serialized string value
+let day = Day(serializedString) //Day value from the serialized string
+```
+
 Getting a Date value from the Day value:<br />
 ```swift
 let date = day.rawValue
