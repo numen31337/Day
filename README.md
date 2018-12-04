@@ -23,7 +23,7 @@ let day = Day(date) //Day value from the date by dropping time components
 
 Serialization:<br />
 ```swift
-let serializedString = day.stringValue //A serialized string value
+let serializedString = DayString(day).stringValue //A serialized string value
 let day = Day(serializedString) //Day value from the serialized string
 ```
 
