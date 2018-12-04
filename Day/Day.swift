@@ -68,7 +68,7 @@ extension Day: Comparable {
 }
 
 extension Day: CustomStringConvertible {
-    public var description: String { return stringValue }
+    public var description: String { return DayString(self).stringValue }
 }
 
 extension Day: Hashable {
