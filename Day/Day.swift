@@ -22,11 +22,6 @@ public struct Day {
 	public init(_ day: Day) {
 		rawValue = day.rawValue
 	}
-	
-	public init?(_ string: String) {
-		guard let day = DayString(string)?.day else { return nil }
-		rawValue = day.rawValue
-	}
 }
 
 ///MARK: Helpers
@@ -65,10 +60,6 @@ extension Day: Comparable {
     public static func <(lhs: Day, rhs: Day) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
-}
-
-extension Day: CustomStringConvertible {
-    public var description: String { return DayString(self).stringValue }
 }
 
 extension Day: Hashable {

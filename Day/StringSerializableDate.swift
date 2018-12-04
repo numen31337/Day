@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StringSerializableDate: CustomStringConvertible {
+protocol StringSerializableDate {
     var stringValue: String { get }
     static var formatter: DateFormatter { get }
     
@@ -18,8 +18,6 @@ protocol StringSerializableDate: CustomStringConvertible {
 }
 
 extension StringSerializableDate {
-    var description: String { return stringValue }
-    
     init(_ date: Date) {
         let parsedString = Self.formatter.string(from: date)
         assert(Self.isCorrectFormat(parsedString))
@@ -93,4 +91,31 @@ struct DayTimeString: StringSerializableDate {
         
         return true
     }
+}
+
+extension Date {
+    public static func date(fromSerializedDateAndTimeString string: String) -> Date? {
+        return DayTimeString(string)?.date
+    }
+    
+    public static func date(fromSerializedDay string: String) -> Date? {
+        return DayString(string)?.day.rawValue
+    }
+    
+    public var serializedDayString: String { return DayString(self).stringValue }
+    
+    public var serializedDayAndTimeString: String { return DayTimeString(self).stringValue }
+}
+
+extension Day {
+    public init?(_ string: String) {
+        guard let day = DayString(string)?.day else { return nil }
+        rawValue = day.rawValue
+    }
+    
+    public var serializedDayString: String { return DayString(self).stringValue }
+}
+
+extension Day: CustomStringConvertible {
+    public var description: String { return serializedDayString }
 }

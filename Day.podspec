@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Day"
-  s.version      = "1.1"
+  s.version      = "1.1.1"
   s.summary      = "Mini lib to represent a Day"
   s.description  = "This is the mini library to represent a Day value with serialization functionality"
   s.homepage     = "https://github.com/numen31337/Day"

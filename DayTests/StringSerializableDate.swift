@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Day
+import Day
 
 class DayTests: XCTestCase {
     let formatter: DateFormatter = {
@@ -28,35 +28,50 @@ class DayTests: XCTestCase {
     
     func testDayFromString() {
         let correctResultDate = formatter.date(from: "2018.11.04 00:00")
-        let dayString = DayString("2018.11.04")!.day.rawValue
+        let dayString = Day("2018.11.04")!.rawValue
+        let dateString = Date.date(fromSerializedDay: "2018.11.04")
+        
         XCTAssertEqual(correctResultDate, dayString)
+        XCTAssertEqual(correctResultDate, dateString)
     }
     
     func testDayTimeFromString() {
         let correctResultDate = formatter.date(from: "2018.11.04 11:10")
-        let dayString = DayTimeString("2018.11.04.11.10")!.date
+        let dayString = Date.date(fromSerializedDateAndTimeString: "2018.11.04.11.10")
+        
         XCTAssertEqual(correctResultDate, dayString)
     }
     
-    func testStringFromDay() {
+    func testDayString() {
         let date = formatter.date(from: "2018.11.04 11:10")!
-        let string = DayString(date).stringValue
-        XCTAssertEqual(string, "2018.11.04")
+        let stringFromDay = Day(date).serializedDayString
+        let stringFromDate = date.serializedDayString
+        
+        XCTAssertEqual(stringFromDay, "2018.11.04")
+        XCTAssertEqual(stringFromDate, "2018.11.04")
     }
-    
+
     func testStringFromDayTime() {
         let date = formatter.date(from: "2018.11.04 11:10")!
-        let string = DayTimeString(date).stringValue
+        let string = date.serializedDayAndTimeString
         XCTAssertEqual(string, "2018.11.04.11.10")
     }
-    
-    func testDayStringFail() {
-        let failedValue = DayTimeString("2018+11+04")
+
+    func testDayStringInitFail() {
+        let failedValue = Day("2018+11+04")
         XCTAssertNil(failedValue)
     }
+
+    func testDateStringInitFail() {
+        let failedValue1 = Date.date(fromSerializedDateAndTimeString: "2018.11.04+11:10")
+        let failedValue2 = Date.date(fromSerializedDay: "2018+11+04")
+        
+        XCTAssertNil(failedValue1)
+        XCTAssertNil(failedValue2)
+    }
     
-    func testDayTimeStringFail() {
-        let failedValue = DayTimeString("2018.11.04+11:10")
-        XCTAssertNil(failedValue)
+    func testDayDescription() {
+        XCTAssertEqual("\(String(describing: Day("2018.11.04")!))", "2018.11.04")
+        XCTAssertEqual(Day("2018.11.04")!.description, "2018.11.04")
     }
 }

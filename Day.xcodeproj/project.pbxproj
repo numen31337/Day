@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E90301F221B69655002FB724 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E9D466311FC5A65600F2BEC3 /* Day.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Day.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D466341FC5A65600F2BEC3 /* Day.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
 		E9D466351FC5A65600F2BEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				E9D466511FC5A69900F2BEC3 /* SwiftlyLRU.swift */,
 				E9D466341FC5A65600F2BEC3 /* Day.h */,
 				E9D466351FC5A65600F2BEC3 /* Info.plist */,
+				E90301F221B69655002FB724 /* README.md */,
 			);
 			path = Day;
 			sourceTree = "<group>";
