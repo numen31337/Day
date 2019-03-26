@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Day {
+public struct Day: Hashable {
     public let rawValue: Date
     
     fileprivate init(withRawValue value: Date) {
@@ -50,20 +50,10 @@ extension Day {
     }
 }
 
-extension Day: Equatable {
-    public static func ==(lhs: Day, rhs: Day) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
-}
-
 extension Day: Comparable {
     public static func <(lhs: Day, rhs: Day) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
-}
-
-extension Day: Hashable {
-    public var hashValue: Int { return rawValue.hashValue }
 }
 
 extension Date {
