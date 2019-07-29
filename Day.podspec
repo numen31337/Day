@@ -1,12 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "Day"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "Mini lib to represent a Day"
   s.description  = "This is the mini library to represent a Day value with serialization functionality"
   s.homepage     = "https://github.com/numen31337/Day"
   s.license      = "MIT"
-  s.author             = { "Oleksandr Kirichenko" => "numen31337@gmail.com" }
-  s.social_media_url   = "http://twitter.com/numen31337"
+  s.author       = { "Oleksandr Kirichenko" => "contact@oleksandrkirichenko.com" }
   
   s.ios.deployment_target = '9.0'
   s.watchos.deployment_target = '4.0'
