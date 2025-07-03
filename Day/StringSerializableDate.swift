@@ -86,8 +86,8 @@ struct DayTimeString: StringSerializableDate {
         guard let year = Int(components[0]), year > 0 else { return false }
         guard let month = Int(components[1]), month > 0, month < 13 else { return false }
         guard let day = Int(components[2]), day > 0, day < 32 else { return false }
-        guard let hours = Int(components[3]), hours >= 0, hours < 25 else { return false }
-        guard let minutes = Int(components[4]), minutes >= 0, minutes < 61 else { return false }
+        guard let hours = Int(components[3]), hours >= 0, hours < 24 else { return false }
+        guard let minutes = Int(components[4]), minutes >= 0, minutes < 60 else { return false }
         
         return true
     }

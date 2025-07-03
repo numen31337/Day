@@ -74,4 +74,13 @@ class DayTests: XCTestCase {
         XCTAssertEqual("\(String(describing: Day("2018.11.04")!))", "2018.11.04")
         XCTAssertEqual(Day("2018.11.04")!.description, "2018.11.04")
     }
+
+    func testDayTimeStringInvalidFormat() {
+        let invalidHour = Date.date(fromSerializedDateAndTimeString: "2018.11.04.25.00")
+        let invalidMinute = Date.date(fromSerializedDateAndTimeString: "2018.11.04.10.61")
+
+        XCTAssertNil(invalidHour)
+        XCTAssertNil(invalidMinute)
+    }
+
 }

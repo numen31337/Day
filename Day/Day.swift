@@ -41,7 +41,7 @@ extension Day {
 		return toDate.numberOfDays(sinceDay: self)
     }
     
-    public func dayBy(addingDays days: NSInteger) -> Day {
+    public func dayBy(addingDays days: Int) -> Day {
         if let cacheValue = DayCache.dayByAddingDays[self]?[days] { return cacheValue }
         let dayByAddingDays = Day(withRawValue: Calendar.current.date(byAdding: .day, value: days, to: self.rawValue)!)
         DayCache.dayByAddingDays[self] = [days : dayByAddingDays]
