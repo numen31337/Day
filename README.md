@@ -1,7 +1,7 @@
 # Day
 ![Platform](https://img.shields.io/cocoapods/p/AKVideoImageView.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/l/AKVideoImageView.svg)
-[![Build Status](https://travis-ci.org/numen31337/Day.svg?branch=master)](https://travis-ci.org/numen31337/Day)
+[![CI](https://github.com/numen31337/Day/actions/workflows/swift.yml/badge.svg?branch=master)](https://github.com/numen31337/Day/actions/workflows/swift.yml)
 
 Day is the mini library to represent a Day value with serialization functionality. Mainly for private use.
 

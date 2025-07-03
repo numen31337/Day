@@ -1,0 +1,17 @@
+name: Swift
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: swift:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: swift test --enable-test-discovery

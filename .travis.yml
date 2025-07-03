@@ -1,5 +1,0 @@
-osx_image: xcode10.2
-language: objective-c
-xcode_sdk: iphonesimulator
-
-script: xcodebuild build -project Day.xcodeproj -scheme Day CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
