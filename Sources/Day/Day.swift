@@ -15,8 +15,7 @@ public struct Day: Hashable {
     }
     
     public init(_ date: Date? = nil) {
-        let comps = Calendar.current.dateComponents([.day, .month, .year], from: date ?? Date())
-        rawValue = Calendar.current.date(from: comps)!
+        rawValue = Calendar.current.startOfDay(for: date ?? Date())
     }
 	
 	public init(_ day: Day) {
