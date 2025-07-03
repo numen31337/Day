@@ -46,9 +46,18 @@ let diff = day.numberOfDays(toDate: day1)
 ```
 
 ## Swift Package Manager
+Add Day to your *Package.swift*:
 
 ```swift
 .package(url: "https://github.com/numen31337/Day.git", from: "1.2.0")
 ```
 
-Then include "Day" as a dependency for your target.
+Then include `Day` as a dependency for your target.
+
+## CocoaPods
+
+Add the pod to your *Podfile*:
+
+```ruby
+pod 'Day', '~> 1.2'
+```

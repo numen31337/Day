@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.swift_version = "5.0"
   
   s.source        = { :git => "https://github.com/numen31337/Day.git", :tag => "#{s.version}" }
-  s.source_files  = "Day/**/*.{h,m,swift}"
+  s.source_files  = "Sources/Day/**/*.swift"
 end

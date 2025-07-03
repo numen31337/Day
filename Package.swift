@@ -16,18 +16,12 @@ let package = Package(
     targets: [
         .target(
             name: "Day",
-            path: "Day",
-            sources: [
-                "Day.swift",
-                "DaySeeking.swift",
-                "StringSerializableDate.swift",
-                "SwiftlyLRU.swift"
-            ]
+            path: "Sources/Day"
         ),
         .testTarget(
             name: "DayTests",
             dependencies: ["Day"],
-            path: "DayTests"
+            path: "Tests/DayTests"
         )
     ]
 )
